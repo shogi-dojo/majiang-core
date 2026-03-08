@@ -520,9 +520,9 @@ suite('Majiang.Shoupai', ()=>{
         test('手牌に4枚ない牌で暗槓できないこと', ()=>
             assert.throws(()=>Shoupai('m1112p456s789z4567').gang('m1111')));
         test('手牌にない牌で加槓できないこと', ()=>{
-            assert.throws(()=>Shoupai('m13p456s789z567,m222=').gang('m2222'));
-            assert.throws(()=>Shoupai('m10p456s789z567,m555=').gang('m5555'));
-            assert.throws(()=>Shoupai('m15p456s789z567,m555=').gang('m5550'));
+            assert.throws(()=>Shoupai('m13p456s789z567,m222=').gang('m222=2'));
+            assert.throws(()=>Shoupai('m10p456s789z567,m555=').gang('m555=5'));
+            assert.throws(()=>Shoupai('m15p456s789z567,m555=').gang('m555=0'));
         });
         test('明刻がない牌で加槓できないこと', ()=>
             assert.throws(()=>Shoupai('m12p456s789z567,m222=').gang('m111=1')));

@@ -1,3 +1,21 @@
+## v1.4.0 / 2026-04-12
+
+  - Majiang.Game
+    - メソッド set dwell() を追加(set speed(), get speed() は廃止予定)
+    - メソッド get view() を追加
+  - Majiang.Player
+    - メソッド get view() を追加
+  - サブパッケージ @kobalab/majiang-core/dev を追加
+    - Majiang.Dev.Game - Majiang.Game のデバッグ用ドライバとしての実装
+  - パッケージを最新化
+    - mocha 11.7.1 → 11.7.5
+    - nyc 17.1.0 → 18.0.0
+  - 脆弱性警告に対処
+    - brace-expansion 2.0.2 → 2.1.0
+    - glob 10.4.5 → 10.5.0
+    - js-yaml 3.14.1, 4.1.0 → 4.1.1
+    - minimatch 9.0.5 → 9.0.9
+
 ### v1.3.5 / 2026-03-08
 
   - #12 手牌にない牌で加槓できないテストケースの誤りを修正

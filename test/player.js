@@ -72,7 +72,7 @@ suite('Majiang.Player', ()=>{
             const kaiju = { id: 1, rule: Majiang.rule(), title: 'タイトル',
                             player: ['私','下家','対面','上家'], qijia: 2 };
             player.kaiju(kaiju);
-            assert.deepEqual(player._view._param, { kaiju: 1 });
+            assert.deepEqual(player.view._param, { kaiju: 1 });
         });
     });
     suite('qipai(qipai)', ()=>{
@@ -105,7 +105,7 @@ suite('Majiang.Player', ()=>{
                             defen: [ 25000, 25000, 25000, 25000 ], baopai: 's5',
                             shoupai: ['','m123p456s789z1234','',''] };
             player.qipai(qipai);
-            assert.deepEqual(player._view._param, { redraw: null });
+            assert.deepEqual(player.view._param, { redraw: null });
         });
     });
     suite('zimo(zimo)', ()=>{
@@ -123,10 +123,10 @@ suite('Majiang.Player', ()=>{
             const player = init_player();
             player.view = new View();
             player.zimo({ l: 0, p: 'z5' });
-            assert.deepEqual(player._view._param,
+            assert.deepEqual(player.view._param,
                                 { update: { zimo: { l: 0, p: 'z5' } } });
             player.zimo({ l: 1, p: '' }, true);
-            assert.deepEqual(player._view._param,
+            assert.deepEqual(player.view._param,
                                 { update: { gangzimo: { l: 1, p: '' } } });
         });
     });
@@ -175,7 +175,7 @@ suite('Majiang.Player', ()=>{
             const player = init_player({shoupai:'m123p456s789z1234z5'});
             player.view = new View();
             player.dapai({ l: 0, p: 'z5_' });
-            assert.deepEqual(player._view._param,
+            assert.deepEqual(player.view._param,
                                 { update: { dapai: { l: 0, p: 'z5_' } } });
         });
     });
@@ -198,7 +198,7 @@ suite('Majiang.Player', ()=>{
             player.view = new View();
             player.dapai({ l: 2, p: 'z1' });
             player.fulou({ l: 0, m: 'z111=' });
-            assert.deepEqual(player._view._param,
+            assert.deepEqual(player.view._param,
                                 { update: { fulou: { l: 0, m: 'z111=' } } });
         });
     });
@@ -230,7 +230,7 @@ suite('Majiang.Player', ()=>{
             const player = init_player({shoupai:'m123p456s788z12,z111='});
             player.view = new View();
             player.gang({ l: 0, m: 'z111=1' });
-            assert.deepEqual(player._view._param,
+            assert.deepEqual(player.view._param,
                                 { update: { gang: { l: 0, m: 'z111=1' } } });
         });
     });
@@ -244,7 +244,7 @@ suite('Majiang.Player', ()=>{
             const player = init_player();
             player.view = new View();
             player.kaigang({ baopai: 'p1' });
-            assert.deepEqual(player._view._param,
+            assert.deepEqual(player.view._param,
                                 { update: { kaigang: { baopai: 'p1' } } });
         });
     });
@@ -261,7 +261,7 @@ suite('Majiang.Player', ()=>{
             player.view = new View();
             player.hule({ l: 1, shoupai: 'm123p456s789z1122z1*',
                           fubaopai: ['s1'] });
-            assert.deepEqual(player._view._param,
+            assert.deepEqual(player.view._param,
                                 { update: { hule: {
                                     l: 1, shoupai:  'm123p456s789z1122z1*',
                                     fubaopai: ['s1'] } } });
@@ -280,7 +280,7 @@ suite('Majiang.Player', ()=>{
             player.view = new View();
             player.dapai({ l: 1, p: 'm3*' });
             player.pingju({ name:'', shoupai:['','','','m123p456s789z1122*'] });
-            assert.deepEqual(player._view._param,
+            assert.deepEqual(player.view._param,
                                 { update: { pingju: {
                                     name:'',
                                     shoupai:['','','','m123p456s789z1122*']
@@ -304,7 +304,7 @@ suite('Majiang.Player', ()=>{
             player.view = new View();
             const paipu = { defen: [ 10000, 20000, 30000, 40000 ] };
             player.jieju(paipu);
-            assert.deepEqual(player._view._param, { summary: paipu });
+            assert.deepEqual(player.view._param, { summary: paipu });
         });
     });
 

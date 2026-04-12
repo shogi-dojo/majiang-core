@@ -1,7 +1,6 @@
 const assert = require('assert');
 
-const Majiang = require('../');
-Majiang.Dev = { Game: require('../dev/game') };
+const Majiang = require('../dev/');
 
 const script = require('./data/script.json');
 

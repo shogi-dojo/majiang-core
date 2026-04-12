@@ -284,7 +284,7 @@ suite('Majiang.Game', ()=>{
             assert.equal(game._paipu.log.length, 0);
         });
         test('表示処理が呼び出されること', ()=>
-            assert.deepEqual(game._view._param, { kaiju: null }));
+            assert.deepEqual(game.view._param, { kaiju: null }));
         test('通知が伝わること', ()=>{
             for (let id = 0; id < 4; id++) {
                 let msg = {
@@ -340,7 +340,7 @@ suite('Majiang.Game', ()=>{
         test('四風連打中であること', ()=> assert.ok(game._fengpai));
         test('牌譜が記録されること', ()=> assert.ok(last_paipu(game).qipai));
         test('表示処理が呼び出されること', ()=>
-            assert.deepEqual(game._view._param, { redraw: null }));
+            assert.deepEqual(game.view._param, { redraw: null }));
         test('通知が伝わること', ()=>{
             for (let l = 0; l < 4; l++) {
                 let id = game.model.player_id[l];
@@ -377,7 +377,7 @@ suite('Majiang.Game', ()=>{
             assert.ok(game.model.shoupai[0].get_dapai()));
         test('牌譜が記録されること', ()=> assert.ok(last_paipu(game).zimo));
         test('表示処理が呼び出されること', ()=>
-            assert.deepEqual(game._view._param, { update: last_paipu(game) }));
+            assert.deepEqual(game.view._param, { update: last_paipu(game) }));
         test('通知が伝わること', ()=>{
             for (let l = 0; l < 4; l++) {
                 let id = game.model.player_id[l];
@@ -404,7 +404,7 @@ suite('Majiang.Game', ()=>{
             assert.equal(game.model.he[0]._pai[0], dapai));
         test('牌譜が記録されること', ()=> assert.ok(last_paipu(game).dapai));
         test('表示処理が呼び出されること', ()=>
-            assert.deepEqual(game._view._param, { update: last_paipu(game) }));
+            assert.deepEqual(game.view._param, { update: last_paipu(game) }));
         test('通知が伝わること', ()=>{
             for (let l = 0; l < 4; l++) {
                 let id = game.model.player_id[l];
@@ -514,7 +514,7 @@ suite('Majiang.Game', ()=>{
             assert.equal(game.model.shoupai[1]._fulou[0], 'm12-3'));
         test('牌譜が記録されること', ()=> assert.ok(last_paipu(game).fulou));
         test('表示処理が呼び出されること', ()=>
-            assert.deepEqual(game._view._param, { update: last_paipu(game) }));
+            assert.deepEqual(game.view._param, { update: last_paipu(game) }));
         test('通知が伝わること', ()=>{
             for (let l = 0; l < 4; l++) {
                 let id = game.model.player_id[l];
@@ -557,7 +557,7 @@ suite('Majiang.Game', ()=>{
         });
         test('牌譜が記録されること', ()=> assert.ok(last_paipu(game).gang));
         test('表示処理が呼び出されること', ()=>
-            assert.deepEqual(game._view._param, { update: last_paipu(game) }));
+            assert.deepEqual(game.view._param, { update: last_paipu(game) }));
         test('通知が伝わること', ()=>{
             for (let l = 0; l < 4; l++) {
                 let id = game.model.player_id[l];
@@ -596,7 +596,7 @@ suite('Majiang.Game', ()=>{
             assert.ok(game.model.shoupai[0].get_dapai()));
         test('牌譜が記録されること', ()=> assert.ok(last_paipu(game, -1).gangzimo));
         test('表示処理が呼び出されること', ()=>
-            assert.deepEqual(game._view._param,
+            assert.deepEqual(game.view._param,
                              { update: last_paipu(game, -1) }));
         test('通知が伝わること', ()=>{
             for (let l = 0; l < 4; l++) {
@@ -672,7 +672,7 @@ suite('Majiang.Game', ()=>{
         });
         test('牌譜が記録されること', ()=> assert.ok(last_paipu(game).kaigang));
         test('表示処理が呼び出されること', ()=>
-            assert.deepEqual(game._view._param, { update: last_paipu(game) }));
+            assert.deepEqual(game.view._param, { update: last_paipu(game) }));
         test('通知が伝わること', ()=>{
             for (let l = 0; l < 4; l++) {
                 let id = game.model.player_id[l];
@@ -704,7 +704,7 @@ suite('Majiang.Game', ()=>{
             assert.ok(last_paipu(game).hule);
         });
         test('表示処理が呼び出されること', ()=>
-            assert.deepEqual(game._view._param, { update: last_paipu(game) }));
+            assert.deepEqual(game.view._param, { update: last_paipu(game) }));
         test('通知が伝わること', ()=>{
             for (let l = 0; l < 4; l++) {
                 let id = game.model.player_id[l];
@@ -884,7 +884,7 @@ suite('Majiang.Game', ()=>{
         });
         test('牌譜が記録されること', ()=> assert.ok(last_paipu(game).pingju));
         test('表示処理が呼び出されること', ()=>
-            assert.deepEqual(game._view._param, { update: last_paipu(game) }));
+            assert.deepEqual(game.view._param, { update: last_paipu(game) }));
         test('通知が伝わること', ()=>{
             for (let l = 0; l < 4; l++) {
                 let id = game.model.player_id[l];
@@ -1252,7 +1252,7 @@ suite('Majiang.Game', ()=>{
             assert.deepEqual(game._paipu.point, ['40.6','-29.6','8.5','-19.5']);
         });
         test('表示処理が呼び出されること', ()=>
-            assert.ok(game._view._param.summary));
+            assert.ok(game.view._param.summary));
         test('通知が伝わること', ()=>{
             for (let l = 0; l < 4; l++) {
                 let id = game.model.player_id[l];
@@ -1386,7 +1386,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{hule:'-'},{},{},{}]);
             game.zimo();
             game.next();
-            assert.deepEqual(game._view._say, ['zimo', 0]);
+            assert.deepEqual(game.view._say, ['zimo', 0]);
             assert.ok(last_paipu(game).hule);
         });
         test('ツモ和了(不正応答)', ()=>{
@@ -1452,7 +1452,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{hule:'-'},{},{}]);
             game.dapai('z1');
             game.next();
-            assert.deepEqual(game._view._say, ['rong', 1]);
+            assert.deepEqual(game.view._say, ['rong', 1]);
             assert.equal(last_paipu(game).hule.l, 1);
         });
         test('和了見逃しでフリテンになること', ()=>{
@@ -1469,7 +1469,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{hule:'-'},{hule:'-'},{}]);
             game.dapai('m5*');
             game.next();
-            assert.deepEqual(game._view._say, ['rong', 2])
+            assert.deepEqual(game.view._say, ['rong', 2])
             assert.equal(last_paipu(game).hule.l, 1);
             assert.deepEqual(game._hule, [2]);
         });
@@ -1481,7 +1481,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{hule:'-'},{hule:'-'},{}]);
             game.dapai('m5*');
             game.next();
-            assert.deepEqual(game._view._say, ['rong', 1])
+            assert.deepEqual(game.view._say, ['rong', 1])
             assert.equal(last_paipu(game).hule.l, 1);
             assert.deepEqual(game._hule, []);
         });
@@ -1493,7 +1493,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{hule:'-'},{hule:'-'},{hule:'-'}]);
             game.dapai('m5*');
             game.next();
-            assert.deepEqual(game._view._say, ['rong', 3])
+            assert.deepEqual(game.view._say, ['rong', 3])
             assert.equal(last_paipu(game).pingju.name, '三家和');
             assert.deepEqual(last_paipu(game).pingju.shoupai,
                              ['','m23446p45688s345',
@@ -1509,7 +1509,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{hule:'-'},{hule:'-'},{hule:'-'}]);
             game.dapai('m5*');
             game.next();
-            assert.deepEqual(game._view._say, ['rong', 3])
+            assert.deepEqual(game.view._say, ['rong', 3])
             assert.equal(last_paipu(game).hule.l, 1);
             assert.deepEqual(game._hule, [2, 3]);
         });
@@ -1669,7 +1669,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{},{},{fulou:'m1111+'}]);
             game.dapai('m1');
             game.next();
-            assert.deepEqual(game._view._say, ['gang', 3]);
+            assert.deepEqual(game.view._say, ['gang', 3]);
             assert.equal(last_paipu(game).fulou.m, 'm1111+');
         });
         test('カン(不正応答)', ()=>{
@@ -1695,7 +1695,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{},{fulou:'m111='},{}]);
             game.dapai('m1');
             game.next();
-            assert.deepEqual(game._view._say, ['peng', 2]);
+            assert.deepEqual(game.view._say, ['peng', 2]);
             assert.equal(last_paipu(game).fulou.m, 'm111=');
         });
         test('ポン(不正応答)', ()=>{
@@ -1712,7 +1712,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{fulou:'m456-'},{},{}]);
             game.dapai('m6');
             game.next();
-            assert.deepEqual(game._view._say, ['chi', 1]);
+            assert.deepEqual(game.view._say, ['chi', 1]);
             assert.equal(last_paipu(game).fulou.m, 'm456-');
         });
         test('チー(不正応答)', ()=>{
@@ -1730,7 +1730,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{fulou:'m1-23'},{fulou:'m111='},{}]);
             game.dapai('m1');
             game.next();
-            assert.deepEqual(game._view._say, ['peng', 2]);
+            assert.deepEqual(game.view._say, ['peng', 2]);
             assert.equal(last_paipu(game).fulou.m, 'm111=');
         })
     });
@@ -1789,7 +1789,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{},{},{hule:'-'}]);
             game.gang('m111+1');
             game.next();
-            assert.deepEqual(game._view._say, ['rong', 3]);
+            assert.deepEqual(game.view._say, ['rong', 3]);
             assert.equal(last_paipu(game).hule.l, 3);
         });
         test('ロン和了(不正応答)', ()=>{
@@ -1831,7 +1831,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{hule:'-'},{hule:'-'},{}]);
             game.gang('m505-5');
             game.next();
-            assert.deepEqual(game._view._say, ['rong', 2]);
+            assert.deepEqual(game.view._say, ['rong', 2]);
             assert.equal(last_paipu(game).hule.l, 1);
             assert.deepEqual(game._hule, [2]);
         });
@@ -1845,7 +1845,7 @@ suite('Majiang.Game', ()=>{
             set_reply(game, [{},{hule:'-'},{hule:'-'},{}]);
             game.gang('m505-5');
             game.next();
-            assert.deepEqual(game._view._say, ['rong', 1]);
+            assert.deepEqual(game.view._say, ['rong', 1]);
             assert.equal(last_paipu(game).hule.l, 1);
             assert.deepEqual(game._hule, []);
         });

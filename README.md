@@ -1,4 +1,10 @@
-# majiang-core
+# majiang-core (shogi-dojo fork)
+
+> **Fork Notice**: This repository is a fork of [`@kobalab/majiang-core`](https://github.com/kobalab/majiang-core) maintained by [shogi-dojo](https://github.com/shogi-dojo).
+>
+> ### Key Divergences:
+> - Parameterized 3-player (sanma / 三人打ち) support across wall generator, call rules, score calculation (`get_defen`), seat math, and kita/nukidora.
+> - Retained original MIT license and copyright notice.
 
 麻雀基本ライブラリ
 
